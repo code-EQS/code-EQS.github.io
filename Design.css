@@ -1,0 +1,77 @@
+@charset "utf-8";
+body{
+	margin: 0;
+}
+
+footer{
+	margin:0;
+	background-color: #20AFE1;
+	width: auto;
+	height: 200px;
+}
+
+#MenuBar {
+    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+/*    background-color: #4F6EDC;*/
+    height: 70px;
+    width: auto;
+	margin: 0;
+}
+
+#MenuBar_List{
+	list-style-type: none;
+	width: inherit;
+	height: inherit;
+	margin: 0;
+  	padding: 0;
+}
+.MenuBar_Icon{
+	vertical-align:baseline;
+	height: 30px;
+	width:30px;
+}
+
+
+li.MenuBar_Button{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 200px;
+	height:inherit; 
+	background-color: #f1f1f1;
+	float: left;
+}
+
+li.MenuBar_Button a{
+	display: block;
+	color: #000;
+	height: inherit;
+	padding: 0;
+	font-size: 40px;
+	font-family: "Segoe Print";
+	text-align: center;
+}
+
+li.MenuBar_Button a:hover{
+	background-color: #555;
+	filter: invert(100%);
+	
+}
+
+div.footer_div{
+	padding: 10px;
+	float: left;
+	display: block;
+	height: inherit;
+	width: auto;
+}
+
+/*
+p.MenuBar_Text{
+	height: inherit;
+	margin: 0;
+	text-align: center;
+	font-size: 40px;
+	font-family: "Segoe Print"
+}
+*/
