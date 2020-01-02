@@ -16,6 +16,8 @@ footer{
     height: 70px;
     width: auto;
 	margin: 0;
+	display: flex;
+	background-color: #f1f1f1;
 }
 
 #MenuBar_List{
@@ -24,19 +26,18 @@ footer{
 	height: inherit;
 	margin: 0;
   	padding: 0;
+	display: inherit;
 }
-.MenuBar_Icon{
+img.MenuBar_Icon{
 	vertical-align:baseline;
 	height: 30px;
 	width:30px;
 }
-
-
 li.MenuBar_Button{
 	list-style-type: none;
 	margin: 0;
-	padding: 0;
-	width: 200px;
+	padding: 0px 5px;
+	width: 180px;
 	height:inherit; 
 	background-color: #f1f1f1;
 	float: left;
@@ -65,7 +66,9 @@ div.footer_div{
 	height: inherit;
 	width: auto;
 }
-
+.footer_nav{
+	display: flex;
+}
 /*
 p.MenuBar_Text{
 	height: inherit;
