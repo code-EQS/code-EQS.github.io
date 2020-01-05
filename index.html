@@ -1,40 +1,106 @@
 <!DOCTYPE html>
-<html> 
-    <head>
-        
-    <link href="Design.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-    <nav id="MenuBar">
-		<ul id="MenuBar_List">
-			<li class="MenuBar_Button"><a href="index.html"><img src="src/icons/home.png" alt="home icon" class="MenuBar_Icon"/>Home</a></li>
-			<li class="MenuBar_Button"><a href="sub/info.html"><img src="src/icons/info.png" alt="info icon" class="MenuBar_Icon"/>Info</a></li>
-			<li class="MenuBar_Button"><a href="sub/project.html"><img src="src/icons/project-management.png" alt="project icon" class="MenuBar_Icon"/>Project</a></li>
-		    <li class="MenuBar_Button"><a href="sub/github.html"><img src="src/icons/GitHub-Mark-120px-plus.png" width="120" height="120" alt="GitHub logo" class="MenuBar_Icon"/>GitHub</a></li>
-			<li class="MenuBar_Button"><a href="sub/more.html"><img src="src/icons/more.png" alt="more icon" class="MenuBar_Icon"/>More</a></li>
-        </ul>
-	</nav>
-	<div><iframe src="backup/underconstruction.html"></iframe> Home page</div>
-	<footer>
-		<nav class="footer_nav">
-			<div class="footer_div">
-			  <p style="margin: 0"><strong>Contact</strong></p>
-			  <p style="margin: 0">Email: ellisqsean@outlook.com</p>
-            </div>
-		  <div class="footer_div" style="width: 300px">&nbsp;</div>
-			<div class="footer_div">
-			  <p style="margin: 0"><strong>Credit</strong></p>
-			  <p style="margin: 0">Icons in this page are made by </p>
-			  <p style="margin: 0">(from top to bottom, from left to right):</p>
-			  <p style="margin: 0">&nbsp; &nbsp;<a href="https://www.flaticon.com/authors/smashicons" title="Smashicons" target="_blank">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a></p>
-			  <p style="margin: 0">&nbsp; &nbsp;<a href="https://www.flaticon.com/authors/those-icons" title="Those Icons" target="_blank">Those Icons </a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a></p>
-			  <p style="margin: 0">&nbsp; &nbsp;<a href="https://www.flaticon.com/authors/ddara" title="dDara" target="_blank">dDara</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a></p>
-				<p style="margin: 0">&nbsp; &nbsp;<a href="https://octicons.github.com/" title="GitHub Octicons" target="_blank">GitHub Octicons</a> from <a href="https://octicons.github.com/" title="Octicons" target="_blank">octicons.github.com</a></p>
-				<p style="margin: 0">&nbsp; &nbsp;<a href="https://www.flaticon.com/authors/smartline" title="Smartline" target="_blank">Smartline</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a></p>
-<!--				<p style="margin: 0">&nbsp; &nbsp;</p>-->
+<html>
 
-            </div>
+<head>
+	<link href="Design.css" rel="stylesheet" type="text/css">
+
+	<script>
+		function closeIntroManually() {
+			document.getElementById("intro").remove();
+			document.getElementById("home").style.display = "block";
+			clearTimeout(timer);
+		}
+		var timer;
+		function closeIntro() {
+			var c=9;
+			countDown(c);
+			function countDown(c){
+				if(c>0){
+					timer=setTimeout(function(){
+						document.getElementById("countdown_intro").innerText=c;
+						countDown(c-1);
+					},1000);
+				}
+				else{
+					setTimeout(function(){
+						document.getElementById("intro").remove();
+						document.getElementById("home").style.display = "block";
+					},1000);
+				}
+			}
+		}
+	</script>
+</head>
+
+<body onload="closeIntro()">
+	<div id="intro" style="width:100vw;height: auto;">
+		<video autoplay onclick="closeIntroManually()" muted style="width: inherit;height: inherit;">
+			<source src="src/vid/PictureFramewithGrowingFloralBorderTitle_intro.mp4" type="video/mp4">
+			This is an intro video. You are seeing this message because your browser does not support the video tag.
+			Click
+			to skip.
+		</video>
+		<div style="position: absolute;top:0px;left: 1vw;">
+			<p>Click to skip. Direct in <span id="countdown_intro"></span> seconds.</p>
+		</div>
+	</div>
+
+	<div id="home" style="display: none;">
+		<nav id="MenuBar">
+			<ul id="MenuBar_List">
+				<li class="MenuBar_Button"><a href="index.html"><img src="src/icons/home.png" alt="home icon"
+							class="MenuBar_Icon" />Home</a></li>
+				<li class="MenuBar_Button"><a href="sub/info.html"><img src="src/icons/info.png" alt="info icon"
+							class="MenuBar_Icon" />Info</a></li>
+				<li class="MenuBar_Button"><a href="sub/project.html"><img src="src/icons/project-management.png"
+							alt="project icon" class="MenuBar_Icon" />Project</a></li>
+				<li class="MenuBar_Button"><a href="sub/github.html"><img src="src/icons/GitHub-Mark-120px-plus.png"
+							width="120" height="120" alt="GitHub logo" class="MenuBar_Icon" />GitHub</a></li>
+				<li class="MenuBar_Button"><a href="sub/more.html"><img src="src/icons/more.png" alt="more icon"
+							class="MenuBar_Icon" />More</a></li>
+			</ul>
 		</nav>
-	</footer>
+
+
+		<div style="height: 100vw;">
+			<iframe src="backup/underconstruction.html"></iframe>
+			<iframe src="backup/todolist.html"></iframe>
+			<p>Home page</p>
+		</div>
+
+
+		<footer>
+			<nav class="footer_nav">
+				<div class="footer_div">
+					<p style="margin: 0"><strong>Contact</strong></p>
+					<p style="margin: 0">Email: ellisqsean@outlook.com</p>
+				</div>
+				<div class="footer_div" style="width: 300px">&nbsp;</div>
+				<div class="footer_div">
+					<p style="margin: 0"><strong>Credit</strong></p>
+					<p style="margin: 0">Icons in this page are made by </p>
+					<p style="margin: 0">(from top to bottom, from left to right):</p>
+					<p style="margin: 0">&nbsp; &nbsp;<a href="https://www.flaticon.com/authors/smashicons"
+							title="Smashicons" target="_blank">Smashicons</a> from <a href="https://www.flaticon.com/"
+							title="Flaticon" target="_blank">www.flaticon.com</a></p>
+					<p style="margin: 0">&nbsp; &nbsp;<a href="https://www.flaticon.com/authors/those-icons"
+							title="Those Icons" target="_blank">Those Icons </a> from <a
+							href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a></p>
+					<p style="margin: 0">&nbsp; &nbsp;<a href="https://www.flaticon.com/authors/ddara" title="dDara"
+							target="_blank">dDara</a> from <a href="https://www.flaticon.com/" title="Flaticon"
+							target="_blank">www.flaticon.com</a></p>
+					<p style="margin: 0">&nbsp; &nbsp;<a href="https://octicons.github.com/" title="GitHub Octicons"
+							target="_blank">GitHub Octicons</a> from <a href="https://octicons.github.com/"
+							title="Octicons" target="_blank">octicons.github.com</a></p>
+					<p style="margin: 0">&nbsp; &nbsp;<a href="https://www.flaticon.com/authors/smartline"
+							title="Smartline" target="_blank">Smartline</a> from <a href="https://www.flaticon.com/"
+							title="Flaticon" target="_blank">www.flaticon.com</a></p>
+					<!--				<p style="margin: 0">&nbsp; &nbsp;</p>-->
+
+				</div>
+			</nav>
+		</footer>
+	</div>
 </body>
+
 </html>

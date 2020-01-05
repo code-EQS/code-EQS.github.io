@@ -2,10 +2,13 @@
 body{
 	margin: 0;
 }
-
+header{
+	margin: 0;
+	width: auto;
+	height: 70px;
+}
 footer{
-	margin:0;
-	background-color: #20AFE1;
+	background-color: rgb(97, 193, 228);
 	width: auto;
 	height: 200px;
 }
@@ -28,6 +31,7 @@ footer{
   	padding: 0;
 	display: inherit;
 }
+
 img.MenuBar_Icon{
 	vertical-align:baseline;
 	height: 30px;
