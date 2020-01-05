@@ -32,9 +32,9 @@
 	</script>
 </head>
 
-<body onload="closeIntro()">
-	<div id="intro" style="width:100vw;height: auto;">
-		<video autoplay onclick="closeIntroManually()" muted style="width: inherit;height: inherit;">
+<body>
+	<div id="intro" style="width:100vw;height: auto;" >
+		<video autoplay onclick="closeIntroManually()" muted style="width: inherit;height: inherit;" onplay="closeIntro()">
 			<source src="src/vid/PictureFramewithGrowingFloralBorderTitle_intro.mp4" type="video/mp4">
 			This is an intro video. You are seeing this message because your browser does not support the video tag.
 			Click
