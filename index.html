@@ -32,14 +32,16 @@
 	</script>
 </head>
 
-<body style=>
-	<div id="intro">
-		<video autoplay onclick="closeIntroManually()"  muted onplay="closeIntro()">
+<body>
+	<div id="intro" style="background: url('src/vid/backgroundfix.jpg');width: 100vw;height: 100vh;">
+		<!-- <video autoplay onclick="closeIntroManually()"  muted onplay="closeIntro()" >
 			<source src="src/vid/PictureFramewithGrowingFloralBorderTitle_intro.mp4" type="video/mp4">
 			This is an intro video. You are seeing this message because your browser does not support the video tag.
 			Click
 			to skip.
-		</video>
+		</video> -->
+		<img src="src/vid/Pre-comp-1_00000.gif" style="width: inherit;height: inherit;">
+		
 		<div style="position: absolute;top:0px;left: 1vw;">
 			<p>Click to skip. Redirect in <span id="countdown_intro"></span> seconds.</p>
 		</div>
