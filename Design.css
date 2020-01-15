@@ -1,6 +1,14 @@
 @charset "utf-8";
-body,html{
+html{
 	margin: 0;
+	width: 100vw;
+}
+body{
+	margin: 0;
+	width: 100vw;
+	background: url('src/images/AdobeStock_306547421.jpeg');
+	background-size: auto 100vw;
+	background-position-x: center;
 }
 header{
 	margin: 0;
@@ -18,9 +26,7 @@ position: fixed; right: 0; bottom: 0;
     width: auto; height: auto; z-index: -100;
 } */
 
-#home{
-	
-}
+
 #MenuBar {
     font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 /*    background-color: #4F6EDC;*/
@@ -40,11 +46,11 @@ position: fixed; right: 0; bottom: 0;
 	display: inherit;
 }
 
-.mainCanva{
+/* .mainCanva{
 	background: url('src/images/AdobeStock_306547421.jpeg');
 	background-size: auto 100vw;
 	background-position-x: center;
-}
+} */
 
 img.MenuBar_Icon{
 	vertical-align:baseline;
