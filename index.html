@@ -3,16 +3,16 @@
 
 <head>
 	<link href="Design.css" rel="stylesheet" type="text/css">
-
 	<script>
 		function closeIntroManually() {
-			document.getElementById("intro").remove();
-			document.getElementById("home").style.display = "block";
+			// document.getElementById("intro").remove();
+			// document.getElementById("home").style.display = "block";
+			window.location="sub/home.html";
 			clearTimeout(timer);
 		}
 		var timer;
 		function closeIntro() {
-			var c=9;
+			var c=6;
 			countDown(c);
 			function countDown(c){
 				if(c>0){
@@ -23,31 +23,33 @@
 				}
 				else{
 					setTimeout(function(){
-						document.getElementById("intro").remove();
-						document.getElementById("home").style.display = "block";
+						// document.getElementById("intro").remove();
+						// document.getElementById("home").style.display = "block";
+						window.location="sub/home.html";
 					},1000);
+					// window.location="sub/home.html";
 				}
 			}
 		}
 	</script>
 </head>
 
-<body>
-	<div id="intro" style="background: url('src/vid/backgroundfix.jpg');width: 100vw;height: 100vh;">
+<body onload="closeIntro()">
+	<div id="intro" onclick="closeIntroManually()" style="background: url('src/vid/backgroundfix.jpg');width: 100vw;height: 100vh;">
 		<!-- <video autoplay onclick="closeIntroManually()"  muted onplay="closeIntro()" >
 			<source src="src/vid/PictureFramewithGrowingFloralBorderTitle_intro.mp4" type="video/mp4">
 			This is an intro video. You are seeing this message because your browser does not support the video tag.
 			Click
 			to skip.
 		</video> -->
-		<img src="src/vid/Pre-comp-1_00000.gif" style="width: inherit;height: inherit;">
-		
+		<img src="src/vid/introfix.gif" style="width: 100vw;height: auto;bottom: 50vh;position: absolute;vertical-align: middle;transform: translateY(50%);">
 		<div style="position: absolute;top:0px;left: 1vw;">
 			<p>Click to skip. Redirect in <span id="countdown_intro"></span> seconds.</p>
 		</div>
 	</div>
 
-	<!-- <div id="home" class="mainCanvas">
+<!-- 
+	<div id="home" class="mainCanva" style="display: none;">
 		<nav id="MenuBar">
 			<ul id="MenuBar_List">
 				<li class="MenuBar_Button"><a href="index.html"><img src="src/icons/home.png" alt="home icon"
@@ -68,10 +70,10 @@
 			<iframe src="backup/underconstruction.html"></iframe>
 			<iframe src="backup/todolist.html"></iframe>
 			<p>Home page</p>
-		</div>
+		</div> -->
 
 
-		<footer>
+		<!-- <footer>
 			<nav class="footer_nav">
 				<div class="footer_div">
 					<p style="margin: 0"><strong>Contact</strong></p>
@@ -97,11 +99,11 @@
 					<p style="margin: 0">&nbsp; &nbsp;<a href="https://www.flaticon.com/authors/smartline"
 							title="Smartline" target="_blank">Smartline</a> from <a href="https://www.flaticon.com/"
 							title="Flaticon" target="_blank">www.flaticon.com</a></p>
-									<p style="margin: 0">&nbsp; &nbsp;</p>-->
+									<p style="margin: 0">&nbsp; &nbsp;</p>
 
 				</div>
 			</nav>
-		</footer>
+		</footer> -->
 	</div>
 </body>
 
