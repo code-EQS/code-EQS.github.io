@@ -17,8 +17,8 @@ header{
 }
 footer{
 	background-color: rgb(97, 193, 228);
-	width: auto;
-	height: 200px;
+	width: 100vw;
+	height: auto;
 }
 /* video{
 position: fixed; right: 0; bottom: 0;
@@ -28,29 +28,20 @@ position: fixed; right: 0; bottom: 0;
 
 
 #MenuBar {
-    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
-/*    background-color: #4F6EDC;*/
-    height: 70px;
-    width: auto;
+	overflow: hidden;
+	height: auto;
 	margin: 0;
-	display: flex;
 	background-color: #f1f1f1;
 }
 
 #MenuBar_List{
 	list-style-type: none;
-	width: inherit;
-	height: inherit;
+	width: 100vw;
+	height: auto;
 	margin: 0;
   	padding: 0;
-	display: inherit;
+	display: block;
 }
-
-/* .mainCanva{
-	background: url('src/images/AdobeStock_306547421.jpeg');
-	background-size: auto 100vw;
-	background-position-x: center;
-} */
 
 img.MenuBar_Icon{
 	vertical-align:baseline;
@@ -62,7 +53,7 @@ li.MenuBar_Button{
 	margin: 0;
 	padding: 0px 5px;
 	width: 180px;
-	height:inherit; 
+	height:70px; 
 	background-color: #f1f1f1;
 	float: left;
 }
@@ -93,12 +84,4 @@ div.footer_div{
 .footer_nav{
 	display: flex;
 }
-/*
-p.MenuBar_Text{
-	height: inherit;
-	margin: 0;
-	text-align: center;
-	font-size: 40px;
-	font-family: "Segoe Print"
-}
-*/
+
