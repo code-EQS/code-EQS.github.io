@@ -73,6 +73,28 @@ li.MenuBar_Button a:hover{
 	filter: invert(100%);
 	
 }
+li.MenuBar_Button_curpage{
+	list-style-type: none;
+	margin: 0;
+	padding: 0px 5px;
+	width: 180px;
+	height:70px; 
+	background-color: #f1f1f1;
+	float: left;
+
+}
+li.MenuBar_Button_curpage a{
+	display: block;
+	color: #000;
+	filter: invert(100%);
+	height: inherit;
+	padding: 0;
+	font-size: 40px;
+	font-family: "Segoe Print";
+	text-align: center;
+	background-color: rgb(206, 205, 205);
+	filter: invert(100%);
+}
 
 div.footer_div{
 	padding: 10px;
