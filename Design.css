@@ -83,16 +83,35 @@ div.footer_div{
 }
 
 div.tile{
-	background: white;
+	background-color: white;
 	height: 100px;
 	width: 160px;
 	border: 3px solid rgba(233, 233, 233, 0.795);
 }
+
 div.tile:hover{
-	background: #f0f0f0da;
+	background-color: rgba(233, 233, 233, 0.795);
 }
 
 .footer_nav{
 	display: flex;
+}
+
+.shiftEffect{
+	height: 100px;
+	width: 160px;
+	transition: .5s ease-in;
+}
+
+.shiftEffect:hover{
+	box-shadow: 
+	1px 1px #000000,
+	2px 2px #000000,
+	3px 3px #000000,
+	4px 4px #000000,
+	5px 5px #000000;
+	-webkit-transform: translate(-5px,-5px);
+	transform: translate(-5px,-5px);
+	transition: .3s ease;
 }
 
