@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="../widgets/postspanel.css" rel="stylesheet" type="text/css">
+        <title>Post Widget</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            function updatePost(){
+                var obj;
+                $.getJSON("posts.json",function(data){
+                    console.log(data.test);
+                    obj=data.test;
+                    document.getElementById("test").innerHTML=data.posts[0].date;
+                });
+            }
+        </script>
+    </head>
+    <body onload="updatePost()">
+        <div class="post"><p id="test"></p></div>
+    </body>
+</html>

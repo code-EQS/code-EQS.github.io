@@ -1,0 +1,15 @@
+html,body{
+    margin: 0;
+}
+
+div.post{
+    min-height: 100px;
+    width: 100vw;
+    background: #bcecff;
+    /* padding: 10px; */
+    border: 1px solid;
+}
+
+div.post p{
+    word-break: normal;
+}
