@@ -1,0 +1,28 @@
+html,body{
+    margin: 0;
+}
+
+div.postdiv{
+    min-height: 100px;
+    width: inherit;
+    background: #bcecff;
+    padding: 0;
+    border: 1px solid;
+}
+
+div.postdiv p{
+    word-break: normal;
+}
+
+#postlist{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: inherit;
+}
+
+#postlist li{
+    margin: 0;
+    padding: 0;
+    width: inherit;
+}

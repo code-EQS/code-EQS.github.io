@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="../widgets/postpanel.css" rel="stylesheet" type="text/css">
+        <title>Post Widget</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            function updatePost(){
+                //Put codes in the function
+                $.getJSON("posts.json",function(data){
+                    var ulobj=document.getElementById("postlist");
+                    $.each(data.postarr,function(index,arr){
+                        // console.log(arr.content);
+
+                        //Display content from posts.json
+                        var divobj=document.createElement('div');
+                        divobj.setAttribute('class','postdiv');
+                        var text=document.createElement('p');
+                        text.setAttribute('class','postdiv');
+                        text.innerHTML=arr.content;
+                        divobj.appendChild(text);
+                        ulobj.appendChild(divobj);
+                    });
+                });
+            }
+        </script>
+    </head>
+    <body onload="updatePost()">
+        <ul id="postlist">
+            <!-- <li><div class="postdiv"><p>123</p></div></li> -->
+        </ul>
+    </body>
+</html>

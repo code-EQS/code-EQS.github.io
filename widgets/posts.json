@@ -1,9 +1,12 @@
 {
-    "test":"1",
-    "posts":[
+    "postarr":[
         {
             "date":"Jan 19, 2020",
             "content":"This is a test.This is a test.This is a test.This is a test.This is a test.This is a test.This is a test.This is a test."
+        },
+        {
+            "date":"Jan 20, 2020",
+            "content":"This is day 2."
         }
     ]
 }
