@@ -20,11 +20,15 @@
                         text.innerHTML=arr.content;
                         divobj.appendChild(text);
 
-                        var vdate=document.createElement('p');
-                        vdate.innerHTML=arr.date;
-                        vdate.style.textAlign="right";
-                        divobj.appendChild(vdate);
-                        // console.log(arr.date);
+                        var vdate_time=document.createElement('p');
+                        vdate_time.innerHTML=arr.date;
+                        vdate_time.style.textAlign="right";
+                        
+
+                        if(arr.time){
+                            vdate_time.innerHTML+="<br>"+arr.time;       
+                        }
+                        divobj.appendChild(vdate_time);
 
                         var liobj=document.createElement('li');
                         liobj.appendChild(divobj);
