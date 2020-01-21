@@ -27,6 +27,8 @@ position: fixed; right: 0; bottom: 0;
 } */
 
 
+
+
 #MenuBar {
 	overflow: hidden;
 	height: auto;
@@ -41,6 +43,14 @@ position: fixed; right: 0; bottom: 0;
 	margin: 0;
   	padding: 0;
 	display: block;
+}
+
+#postiframe{
+	width: 600px;
+	height: 400px;
+	margin: 0 auto;
+	display: block;
+	border: 1px solid black;
 }
 
 img.MenuBar_Icon{

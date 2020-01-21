@@ -7,7 +7,7 @@
         <script>
             function updatePost(){
                 //Put codes in the function
-                $.getJSON("posts.json",function(data){
+                $.getJSON("../src/posts/posts.json",function(data){
                     var ulobj=document.getElementById("postlist");
                     $.each(data.postarr,function(index,arr){
                         // console.log(arr.content);
@@ -15,11 +15,21 @@
                         //Display content from posts.json
                         var divobj=document.createElement('div');
                         divobj.setAttribute('class','postdiv');
+
                         var text=document.createElement('p');
-                        text.setAttribute('class','postdiv');
                         text.innerHTML=arr.content;
                         divobj.appendChild(text);
-                        ulobj.appendChild(divobj);
+
+                        var vdate=document.createElement('p');
+                        vdate.innerHTML=arr.date;
+                        vdate.style.textAlign="right";
+                        divobj.appendChild(vdate);
+                        // console.log(arr.date);
+
+                        var liobj=document.createElement('li');
+                        liobj.appendChild(divobj);
+                        
+                        ulobj.appendChild(liobj); 
                     });
                 });
             }
