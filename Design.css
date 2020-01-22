@@ -7,8 +7,9 @@ body{
 	margin: 0;
 	width: 100vw;
 	background: url('src/images/AdobeStock_306547421.jpeg');
-	background-size: auto 100vw;
+	background-size: auto 100%;
 	background-position-x: center;
+	background-position-y: -20vh;
 }
 header{
 	margin: 0;
@@ -51,6 +52,12 @@ position: fixed; right: 0; bottom: 0;
 	margin: 0 auto;
 	display: block;
 	border: 1px solid black;
+}
+
+div.contentdiv{
+	height: 100vw; 
+	width: 100vw;
+	position: relative;
 }
 
 img.MenuBar_Icon{
