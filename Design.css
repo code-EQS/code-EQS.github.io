@@ -54,6 +54,12 @@ position: fixed; right: 0; bottom: 0;
 	border: 1px solid black;
 }
 
+#credit{
+	float: right;
+	right: 0px;
+	width: 500px;
+}
+
 div.contentdiv{
 	height: 100vw; 
 	width: 100vw;
@@ -118,7 +124,7 @@ div.footer_div{
 	float: left;
 	display: block;
 	height: inherit;
-	width: auto;
+	width: 100%;
 }
 
 div.tile{
