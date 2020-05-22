@@ -1,127 +1,224 @@
 <!DOCTYPE html>
+
 <head>
     <style>
-        html{
+        html {
             font-family: 'Segoe UI';
         }
-        .journalDiv{
+
+        .journalDiv {
             padding-bottom: 30px;
         }
-        .weeklyTitle{
+
+        .weeklyTitle {
             text-align: center;
         }
-        .foot{
+
+        .foot {
             display: block;
             text-align: right;
         }
-        .solved{
+
+        .solved {
             color: green;
         }
-        .unfinished{
+
+        .planned {
+            color: orange
+        }
+
+        .unfinished {
             color: red;
         }
-        .inProgress{
+
+        .inProgress {
             color: cornflowerblue;
         }
     </style>
 </head>
 <html>
-    <div class="journalDiv">
-        <p>This project is for <strong>Grade 12 Computer Science Culminating Project</strong>. 
-            This is for <strong>personal</strong> and <strong>educational</strong> purpose only. 
-            Programs created by me in this project <strong>will not be shared anywhere on the Internet</strong>.
-            Dev logs will be posted here in order to document the process of development.
-        </p>
-    </div>
-    <div style="border: 1px solid black; ">
-        <ul>
-            <strong>This is a todo list.</strong>
-            <li class="inProgress">A bug where a object sometimes is teleported to a corner</li>
-            
-        </ul>
-    </div>
-    <div class="journalDiv">
-        <p class="weeklyTitle">
-            <strong style="font-size: large;">Week 0 and Week 1 Updates</strong> 
-            <br><small>May 4th-15th</small>
-        </p>
-        <p>
-            Due to conflicts with other events, I was not able to give many updates on both the game and dev logs in week 0. 
-            Since I did not add much to the game, this first journal post will combine progresses made in both weeks.
-        </p>
-        <small class="foot">Date of update: May 12, 2020</small>
-        <p>
-            <strong style="font-size: large;"><i>Program Structures and Classes</i></strong>
-            <br>
-            In week 0, I focused on establishing a basic structure for this project. I wished 
-            to utilize OOP in this project (also because OOP is required for this project). 
-            Therefore, I created a few classes for objects. 
-        </p>
-        <p>
-            Firstly, there is Object. Object is a general class for all objects in this game.
-            Because probably most elements in this game will be classified as an object, 
-            Object class will the parent class for most classes that will be created in future.
-            Some fundamental methods are defined in Object class for other classes, such as 
-            .setDimension() and .setPosition().
-            <br>
-            Secondly, there is MovableObject class that inherits Object class. Based on
-            some methods provided by Object, MovableObjects provides a set of methods for 
-            moving objects. This class will be a parent class of Player class, mob classes
-            and potentially more other classes.
-            <br>
-            For now, Player class only has a few "its own" methods and properties.
-            In future, many systems, inventory system for example, will be associated with Player class.
-        </p>
+<div class="journalDiv">
+    <p>This project is for <strong>Grade 12 Computer Science Culminating Project</strong>.
+        This is for <strong>personal</strong> and <strong>educational</strong> purpose only.
+        Programs created by me in this project <strong>will not be shared anywhere on the Internet</strong>.
+        Dev logs will be posted here in order to document the process of development.
+    </p>
+</div>
+<div class="journalDic">
+    <strong>External Resources:</strong>
+    <ul>
+        <li><a href="https://www.w3schools.com/colors/colors_picker.asp">w3schools RGP Color Picker</a></li>
+    </ul>
+</div>
+<div style="border: 1px solid black; ">
+    <ul>
+        <strong>This is a todo list.</strong>
+        <p>Planned:</p>
+        <li class="planned">Finishing profession system and basic ability designs by this weekend</li>
+        <li class="planned">AI development and map design will start next week.</li>
+        <li class="planned">Hopefully I could start adding UI at the end of next week.</li>
+    </ul>
+    <ul>
+        <p>In Progress:</p>
+        <li class="inProgress">Attacking in 3 different fire modes</li>
+        <li class="inProgress">Gesture ability casting mechanism</li>
+    </ul>
+    <ul>
+        <p>Finished:</p>
+        <li class="solved">Hit box</li>
+        <li class="solved">A bug where a object sometimes is teleported to a corner</li>
+    </ul>
+</div>
+<div class="journalDiv">
+    <p class="weeklyTitle">
+        <strong style="font-size: large;">Week 0 and Week 1 Updates</strong>
+        <br><small>May 4th-15th</small>
+    </p>
+    <p>
+        Due to conflicts with other events, I was not able to give many updates on both the game and dev logs in week 0.
+        Since I did not add much to the game, this first journal post will combine progresses made in both weeks.
+    </p>
+    <small class="foot">Date of update: May 12, 2020</small>
+    <p>
+        <strong style="font-size: large;"><i>Program Structures and Classes</i></strong>
+        <br>
+        In week 0, I focused on establishing a basic structure for this project. I wished
+        to utilize OOP in this project (also because OOP is required for this project).
+        Therefore, I created a few classes for objects.
+    </p>
+    <p>
+        Firstly, there is Object. Object is a general class for all objects in this game.
+        Because probably most elements in this game will be classified as an object,
+        Object class will the parent class for most classes that will be created in future.
+        Some fundamental methods are defined in Object class for other classes, such as
+        .setDimension() and .setPosition().
+        <br>
+        Secondly, there is MovableObject class that inherits Object class. Based on
+        some methods provided by Object, MovableObjects provides a set of methods for
+        moving objects. This class will be a parent class of Player class, mob classes
+        and potentially more other classes.
+        <br>
+        For now, Player class only has a few "its own" methods and properties.
+        In future, many systems, inventory system for example, will be associated with Player class.
+    </p>
 
-        <p>
-            <strong style="font-size: large;"><i>Collision Detection</i></strong>
-            <br>
-            Since this is a 2D game that the player and mobs need to move mostly on ground, 
-            the program has to detect whether the mob is standing on a surface by checking 
-            whether the player's hit box is touching the surface. To make it easier to distinguish different kinds of collisions,
-            both <strong>having overlaps</strong> and <strong>sharing a common boundary</strong> are considered a collision by a collision
-            checking method, checkCollision().
-            This could help avoid problem where the player cannot jump or fall, when standing on a surface, when lying against a wall,
-            or when hitting an object that blocks its top.
-            <br><br>In order to detect collisions from different directions,
-            four new variables are created to indicate collision states. In checkCollision() method, it no longer returns
-            a boolean value that represents whether collision has happened. Instead, it changes the collision state variables,
-            and returns corresponding information, that is the x or y value of the colliding surface, of any existing collision. 
-            (See explanations in <strong><i>Position Re-adjustment</i></strong>)
-        </p>
-        <p>
-            <strong style="font-size: large;"><i>Position Re-adjustment</i></strong>
-            <br>
-            After implementing a collision mechanism,
-            one of the problems that pops up is a moving object might pass the hit box of the colliding object
-            even after a collison is detected by the program. To solve this problem, re-adjusting the moving object
-            to where the collision exactly happened is necessary. 
-            <br><br>
-            For example, in the image shown below, 
-            the white block, representing a mob/player, is given the command to jump. The green block, representing a platform,
-            should prevent the player from moving any further up after their hit boxs collide.
-            But in this case, 1 game loop iteration before this, the player was not having any contact with the platform; because of
-            its fast speed of jumping, the player block exceeds the boundary of the platform in the next game iteration.
-        </p>
-            <img src="/src/images/WhyReadjustPosition.png">
-        <p>
-            To implement the re-adjustments, checkCollision() method is changed that now it returns the information about the surface where
-            a collison has happened, if there is a collosion happened. Those informations will be used as new coordinates for the object. In addition, when an object is moving towards one direction, a boolean variable will be
-            set to True to make sure there will be a position re-adjustment in this direction once the object stops moving; and, this variable will 
-            be reset to False after a re-adjustment is done. In practice, 4 such variables are needed on each direction to ensure that no object can
-            glitch through a wall.
-        </p>
-        <p>
-            However, this method is not perfect. In a worse case where the speed of a 
-            object is incredibly high (more than 1x its own width or height) or the dimensions of 
-            at least one colliding rectangle are too small, checkCollision() may
-            not even be able to catch a colliding event. This disadvantage could be critical
-            in the future for bullet flying. But maybe an alternative approch can be designed 
-            for high speed and small size objects, like <strong>trajectory prediction</strong>.
-        </p>
-        <small class="foot">Date of update: May 14, 2020
-            <br>In week 1, the average time spent on development is 4 hrs/day.
-        </small>
-    </div>
+    <p>
+        <strong style="font-size: large;"><i>Collision Detection</i></strong>
+        <br>
+        Since this is a 2D game that the player and mobs need to move mostly on ground,
+        the program has to detect whether the mob is standing on a surface by checking
+        whether the player's hit box is touching the surface. To make it easier to distinguish different kinds of
+        collisions,
+        both <strong>having overlaps</strong> and <strong>sharing a common boundary</strong> are considered a collision
+        by a collision
+        checking method, checkCollision().
+        This could help avoid problem where the player cannot jump or fall, when standing on a surface, when lying
+        against a wall,
+        or when hitting an object that blocks its top.
+        <br><br>In order to detect collisions from different directions,
+        four new variables are created to indicate collision states. In checkCollision() method, it no longer returns
+        a boolean value that represents whether collision has happened. Instead, it changes the collision state
+        variables,
+        and returns corresponding information, that is the x or y value of the colliding surface, of any existing
+        collision.
+        (See explanations in <strong><i>Position Re-adjustment</i></strong>)
+    </p>
+    <p>
+        <strong style="font-size: large;"><i>Position Re-adjustment</i></strong>
+        <br>
+        After implementing a collision mechanism,
+        one of the problems that pops up is a moving object might pass the hit box of the colliding object
+        even after a collison is detected by the program. To solve this problem, re-adjusting the moving object
+        to where the collision exactly happened is necessary.
+        <br><br>
+        For example, in the image shown below,
+        the white block, representing a mob/player, is given the command to jump. The green block, representing a
+        platform,
+        should prevent the player from moving any further up after their hit boxs collide.
+        But in this case, 1 game loop iteration before this, the player was not having any contact with the platform;
+        because of
+        its fast speed of jumping, the player block exceeds the boundary of the platform in the next game iteration.
+    </p>
+    <img src="/src/images/WhyReadjustPosition.png">
+    <p>
+        To implement the re-adjustments, checkCollision() method is changed that now it returns the information about
+        the surface where
+        a collison has happened, if there is a collosion happened. Those informations will be used as new coordinates
+        for the object. In addition, when an object is moving towards one direction, a boolean variable will be
+        set to True to make sure there will be a position re-adjustment in this direction once the object stops moving;
+        and, this variable will
+        be reset to False after a re-adjustment is done. In practice, 4 such variables are needed on each direction to
+        ensure that no object can
+        glitch through a wall.
+    </p>
+    <p>
+        However, this method is not perfect. In a worse case where the speed of a
+        object is incredibly high (more than 1x its own width or height) or the dimensions of
+        at least one colliding rectangle are too small, checkCollision() may
+        not even be able to catch a colliding event. This disadvantage could be critical
+        in the future for bullet flying. But maybe an alternative approch can be designed
+        for high speed and small size objects, like <strong>trajectory prediction</strong>.
+    </p>
+    <small class="foot">Date of update: May 14, 2020
+        <br>In week 1, the average time spent on development is 4 hrs/day.
+    </small>
+</div>
+<div class="journalDiv">
+    <p class="weeklyTitle">
+        <strong style="font-size: large;">Week 2 Updates</strong>
+        <br><small>May 16-22th</small>
+    </p>
+    <p> In week 2, my focus was on adding more methods for player and mob class.
+        I added properties for MovableObject, now moving objects can be granted flying
+        ability or can be configured to be influenced by gravity.
+    </p>
+    <p>
+        <strong style="font-size: large;"><i>Fixes</i></strong>
+        <br>After writing a test program, I noticed that Python uses reference
+        variable to refer an object instance. So I changed spritearrdic, a dictionary
+        of arrays of all sprites, to objarrdic, a dictionary of arrays of reference to
+        all object instances.
+    </p>
+    <p>For high speed object, now checkCollision() is overriden in a MovableObject's
+        child class, HighSpeedObject(). A back tracking algorithm is used to detect
+        potential collisions after the object leaks to the next location. Via comparing
+        the ratio of speed (change in y vs change in x) and the ratio of size (height vs width),
+        another way of tracking collisions along the trajectory is made (shown in the images below).
+    </p>
+    <img src="/src/images/Screenshot_20200522-082757.jpg">
+    <P>To simplify the complexity, overlapped rectangles need not to be checked.</P>
+    <img src="/src/images/tempFileForShare_20200522-083130.jpg" style="width: 50%;">
+    <img src="/src/images/Screenshot_20200522-083156_Samsung Notes.jpg" style="width: 50%;float: right;">
+    <p>
+        <small>Red line represents the ratio of speed;
+            <br>blue line represents the ratio of size.</small>
+        <br>
+        If speed ratio is greater than the size ratio, it means there will be
+        conjunction on a horizontal surface, otherwise on a vertical surface.
+        As long as such a "string" of high speed rectangles is checked for collision detections,
+        the piercing glitches will stop poping up (hopefully).
+    </p>
+
+    <P><strong style="font-size: large;"><i>Shooting Part 1</i></strong>
+        <br>Shooting bullets is one of the places where a back tracking of high speed
+        object will be needed due to a bullet's small size and greater velocity.
+        There will be three fire modes for a gunslinger, they are the high damage and
+        high accuracy single shot mode, the high short range damage shotgun mode, and
+        a grenade cannon mode. Modes can be changed by pressing number key 1, 2 and 3.
+        The single shot mode is online, shotgun mode has A LOT of bugs, and grenade cannon mode
+        will be added shortly.
+    </P>
+    <p> Fire mode 1 development:
+        <br>I did some math here to determine the movement of a bullet...</p>
+    <img src="/src/images/20200522_090337.jpg" style="width: 50%;">
+    <img src="/src/images/Screenshot_20200522-090310_Samsung Notes.jpg" style="width: 50%;float:right">
+    <p>A bullet essentially will inherit all member mehtods from Object, MovableObject, and HighSpeedObject.
+        Updating position method is the same as the one from MovableObject class, but its
+        checkCollision() method is the new overriden method defined in HighSpeedObject class.
+    </p>
+    <small class="foot">Date of update: May 22, 2020
+        <br>In week 2, the average time spent on development is 3 hrs/day.
+    </small>
+</div>
 
 </html>
