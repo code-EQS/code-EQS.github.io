@@ -128,13 +128,13 @@
         <br>
         After implementing a collision mechanism,
         one of the problems that pops up is a moving object might pass the hit box of the colliding object
-        even after a collison is detected by the program. To solve this problem, re-adjusting the moving object
+        even after a collision is detected by the program. To solve this problem, re-adjusting the moving object
         to where the collision exactly happened is necessary.
         <br><br>
         For example, in the image shown below,
         the white block, representing a mob/player, is given the command to jump. The green block, representing a
         platform,
-        should prevent the player from moving any further up after their hit boxs collide.
+        should prevent the player from moving any further up after their hit boxes collide.
         But in this case, 1 game loop iteration before this, the player was not having any contact with the platform;
         because of
         its fast speed of jumping, the player block exceeds the boundary of the platform in the next game iteration.
@@ -143,7 +143,7 @@
     <p>
         To implement the re-adjustments, checkCollision() method is changed that now it returns the information about
         the surface where
-        a collison has happened, if there is a collosion happened. Those informations will be used as new coordinates
+        a collision has happened, if there is a collision happened. This information will be used as new coordinates
         for the object. In addition, when an object is moving towards one direction, a boolean variable will be
         set to True to make sure there will be a position re-adjustment in this direction once the object stops moving;
         and, this variable will
@@ -156,7 +156,7 @@
         object is incredibly high (more than 1x its own width or height) or the dimensions of
         at least one colliding rectangle are too small, checkCollision() may
         not even be able to catch a colliding event. This disadvantage could be critical
-        in the future for bullet flying. But maybe an alternative approch can be designed
+        in the future for bullet flying. But maybe an alternative approach can be designed
         for high speed and small size objects, like <strong>trajectory prediction</strong>.
     </p>
     <small class="foot">Date of update: May 14, 2020
@@ -179,7 +179,7 @@
         of arrays of all sprites, to objarrdic, a dictionary of arrays of reference to
         all object instances.
     </p>
-    <p>For high speed object, now checkCollision() is overriden in a MovableObject's
+    <p>For high speed object, now checkCollision() is overridden in a MovableObject's
         child class, HighSpeedObject(). A back tracking algorithm is used to detect
         potential collisions after the object leaks to the next location. Via comparing
         the ratio of speed (change in y vs change in x) and the ratio of size (height vs width),
@@ -196,7 +196,7 @@
         If speed ratio is greater than the size ratio, it means there will be
         conjunction on a horizontal surface, otherwise on a vertical surface.
         As long as such a "string" of high speed rectangles is checked for collision detections,
-        the piercing glitches will stop poping up (hopefully).
+        the piercing glitches will stop popping up (hopefully).
     </p>
 
     <P><strong style="font-size: large;"><i>Shooting Part 1</i></strong>
@@ -212,9 +212,9 @@
         <br>I did some math here to determine the movement of a bullet...</p>
     <img src="/src/images/20200522_090337.jpg" style="width: 50%;">
     <img src="/src/images/Screenshot_20200522-090310_Samsung Notes.jpg" style="width: 50%;float:right">
-    <p>A bullet essentially will inherit all member mehtods from Object, MovableObject, and HighSpeedObject.
+    <p>A bullet essentially will inherit all member methods from Object, MovableObject, and HighSpeedObject.
         Updating position method is the same as the one from MovableObject class, but its
-        checkCollision() method is the new overriden method defined in HighSpeedObject class.
+        checkCollision() method is the new overridden method defined in HighSpeedObject class.
     </p>
     <small class="foot">Date of update: May 22, 2020
         <br>In week 2, the average time spent on development is 2.5 hrs/day.
