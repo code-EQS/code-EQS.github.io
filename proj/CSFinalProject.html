@@ -40,8 +40,10 @@
 <div class="journalDiv">
     <p>This project is for <strong>Grade 12 Computer Science Culminating Project</strong>.
         This is for <strong>personal</strong> and <strong>educational</strong> purpose only.
-        Programs created by me in this project <strong>will not be shared anywhere on the Internet</strong>.
-        Dev logs will be posted here in order to document the process of development.
+        Due to potential copyright issues on some arts used, if there is any, in this project, 
+        this game <strong>might NOT be shared on the Internet</strong>.
+        A credit reference will be posted here if any art production or code created by other people is used.
+        Dev logs will be updated weekly in order to document the process of development.
     </p>
 </div>
 <div class="journalDic">
@@ -54,19 +56,22 @@
     <ul>
         <strong>This is a todo list.</strong>
         <p>Planned:</p>
-        <li class="planned">Finishing profession system and basic ability designs by this weekend</li>
-        <li class="planned">AI development and map design will start next week.</li>
-        <li class="planned">Hopefully I could start adding UI at the end of next week.</li>
+        <li class="planned">Map importing using JSON.</li>
+        <li class="planned">Each type of attack should be registered with damage for collideImpact to calculate health loss.</li>
+        <li class="planned">UI.</li>
     </ul>
     <ul>
-        <p>In Progress:</p>
-        <li class="inProgress">Attacking in 3 different fire modes</li>
+        <p>In Progress/Up Next:</p>
         <li class="inProgress">Gesture ability casting mechanism</li>
+        <li class="inProgress">AIs and map layout design.</li>
     </ul>
     <ul>
         <p>Finished:</p>
-        <li class="solved">Hit box</li>
-        <li class="solved">A bug where a object sometimes is teleported to a corner</li>
+        <li class="solved">Attacking in 3 different fire modes.</li>
+        <li class="solved">Profession system and basic ability designs.</li>
+        <li class="solved">Hit boxes.</li>
+        <li class="solved">Collision system</li>
+        <li class="solved">Gravity.</li>
     </ul>
 </div>
 <div class="journalDiv">
@@ -199,7 +204,7 @@
         the piercing glitches will stop popping up (hopefully).
     </p>
 
-    <P><strong style="font-size: large;"><i>Shooting Part 1</i></strong>
+    <P><strong style="font-size: large;"><i>Shooting</i></strong>
         <br>Shooting bullets is one of the places where a back tracking of high speed
         object will be needed due to a bullet's small size and greater velocity.
         There will be three fire modes for a gunslinger, they are the high damage and
@@ -221,4 +226,82 @@
     </small>
 </div>
 
+<div class="journalDiv">
+    <p class="weeklyTitle">
+        <strong style="font-size: large;">Week 3 Updates</strong>
+        <br><small>May 24-29th</small>
+    </p>
+
+    <p><strong style="font-size: large;"><i>Gravity</i></strong>
+    <br>I left off this part from previous updates because I thought it might get changed a lot
+    while I was trying to add more new objects into the game.
+    </p>
+    <p>In week 1, I wrote a simple gravity system by using some physics formulas. I fixed the value of 
+       g (gravitational acceleration) for the visual to be more natural. I only implemented the gravity
+       to objects that cannot fly.
+    </p>
+    <p>And in week 2, I also let flying objects have the influence of gravity. But there was an option
+       to disable gravity for high speed objects like bullets. As long as at least one of gravity and
+       flying ability is enabled, an object will not have any strange behavior. In another word, if both gravity
+       and flying ability are disabled, the object will not have any way to move down, and that will be a disaster.
+    </p>
+    <p>In week 3, many new classes are created using the gravity behavior from the general MovableObject class.
+       For examples, a bullet will be hover-enabled and not influenced by gravtiy; arrows and grenades will
+       be more significantly influenced by gravtiy so they are not hover-enabled. I.e. Arrows will have a movement behavior that is
+       more similar to an object that jumps.
+    </p>
+    <p><strong style="font-size: large;"><i>Professions </i></strong>
+    <br>At this stage, I think I am pretty determined to make only 3 professions in this game. Every profession has unique weapons 
+    and unique abilities. And, I am very passionate about adding flexibilities to every one of them via a special cast feature(see Cast Gesture System
+    below for more info). Here are some brief introductions:
+    </p>
+    <p>
+        First, there will be a gunslinger. The gunslinger will have a knife for melee attack, and 3 ranged 
+        weapons for medium/long distance attacks. Since the game has a background similar to the Age of 
+        Discovery, she will have a rifle that does not have insane attack speed, a shotgun, and a grenade launcher.
+        The gunslinger will feature mobility and high ranged damage.
+    </p>
+    <p>Second, there will be a warrior. The warrior will have a sword (probably a katana) as the melee weapon. She will have
+       a bow with various arrows as the second weapon. This profession will feature
+       melee attack damage and short/medium distance combo damage. </p>
+
+    <p>The third is a mage. The mage does not have a melee weapon, but has powerful magic spells. The mage 
+        The mage features high mobility and high combo damage if abilities are well used.
+    </p>
+
+    <p>Three separated classes are created for those three professions. They all 
+        inherit from GeneralPlayer class which used to be called Player class. Each attack
+        style is made a class so that many objects can be created based on it. 
+        There are essentially two types of attacks, one is creating a projectile, the other
+        is to summon a rectangle in either short distance for melee attack or long distance, for example, for
+        magic spells.
+    </p>
+    <p>Classes are ready to go, I'll just need to bite my fingers and try to decide whether I should find arts online or make my own. And then, there probably will be
+        more debugging coming soon.
+    </p>
+
+    <p><strong style="font-size: large;"><i>Cast Gesture System (in progress)</i></strong>
+    <br>This is most important part of this game because of it adds so much more flexibilities to the gameplay. But to be honest,
+    implementing this system is giving me a big headache. 
+    </p>
+    <p>Cast Gesture System is a mechanism that allows a player to cast different abilities by making different gestures using mouse. 
+       I came up with the idea of this controlling system when I first time attemped to make a game using GameMaker Studio a few years ago, which 
+       apparently I did not succeeed. 
+    </p>
+    <p>An explanation of this system will be: if the player pressed the casting key Q, then the program will keep track of the movement of mouse cursor when M1 is also pressed.
+       Afterward, an algorithm will be used to determine what gestures the player has made. For instance, if the player does not hold M1 when moving the cursor and clicks another location
+       on the screen, a mage will teleport to that location. For another example, if the player holds M1 and moves the cursor forwards, a mage will cast an ability to attack enemy in front of her.
+    </p>
+    <p>
+       The simplest way of doing this in the simplest situation, where 
+       gestures are broken down to one stroke purposely by the player, is to perform linear regression on each stroke to find out the slope. For example, if slope approaches 0,
+       it indicates the stroke is horizontal. However, this method does not work really well if gestures get too complicated because it cannot even correctly recognize which direction
+       the stroke goes.
+    </p>
+
+    <p>To be updated</p>
+    <small class="foot">Date of update: May 22, 2020
+        <br>In week 3, the average time spent on development is 3.5 hrs/day.
+    </small>
+</div>
 </html>
