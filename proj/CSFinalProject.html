@@ -34,6 +34,9 @@
         .inProgress {
             color: cornflowerblue;
         }
+        .rework{
+            color: blueviolet;
+        }
     </style>
 </head>
 <html>
@@ -46,33 +49,55 @@
         Dev logs will be updated weekly in order to document the process of development.
     </p>
 </div>
-<div class="journalDic">
+<div class="journalDiv">
     <strong>External Resources:</strong>
     <ul>
         <li><a href="https://www.w3schools.com/colors/colors_picker.asp">w3schools RGP Color Picker</a></li>
+        <li><a href="https://itch.io/">itch.io</a></li>
+        <li><a href="https://www.pygame.org/docs/">Pygame documentation</a></li>
+        <li><a href="https://stackoverflow.com/">Stack Overflow</a></li>
+        <li>Adobe PhotoShop</li>
+    </ul>
+</div>
+<div class="journalDiv">
+    <strong>Credits:</strong>
+    <ul> 
+        <strong>Art:</strong>
+        <li>Archer character sprite pack from <a href="https://oco.itch.io/medieval-fantasy-character-pack-4">Medieval Fantasy Character Pack</a> ---<a href="https://oco.itch.io/">by OcO</a></li>
+    </ul>
+    <ul>
+        <strong>Code/Technics/Algorithm:</strong>
+        <li><a href="https://stackoverflow.com/questions/35672809/how-to-read-a-list-of-txt-files-in-a-folder-in-python">How to read a list of txt files in a folder in python </a></li>
     </ul>
 </div>
 <div style="border: 1px solid black; ">
+    <p style="padding-left: 15px;"><strong>This is a todo list.</strong></p>
     <ul>
-        <strong>This is a todo list.</strong>
-        <p>Planned:</p>
-        <li class="planned">Map importing using JSON.</li>
+        Planned:
         <li class="planned">Each type of attack should be registered with damage for collideImpact to calculate health loss.</li>
-        <li class="planned">UI.</li>
     </ul>
     <ul>
-        <p>In Progress/Up Next:</p>
-        <li class="inProgress">Gesture ability casting mechanism</li>
+        To be reworked:
+        <li class="rework">Profession system and basic ability designs.</li>
+    </ul>
+    <ul>
+        In Progress/Up Next:
+        <li class="inProgress">UI.</li>
         <li class="inProgress">AIs and map layout design.</li>
+        <li class="inProgress">Map importing using JSON.</li>
     </ul>
     <ul>
-        <p>Finished:</p>
+        Finished:
         <li class="solved">Attacking in 3 different fire modes.</li>
-        <li class="solved">Profession system and basic ability designs.</li>
         <li class="solved">Hit boxes.</li>
         <li class="solved">Collision system</li>
         <li class="solved">Gravity.</li>
     </ul>
+    <ul>
+        Unfinished/Abandoned: 
+        <li class="unfinished">Gesture ability casting mechanism. (This feature has been cut from this project)</li>
+    </ul>
+
 </div>
 <div class="journalDiv">
     <p class="weeklyTitle">
@@ -251,22 +276,22 @@
        more similar to an object that jumps.
     </p>
     <p><strong style="font-size: large;"><i>Professions </i></strong>
-    <br>At this stage, I think I am pretty determined to make only 3 professions in this game. Every profession has unique weapons 
-    and unique abilities. And, I am very passionate about adding flexibilities to every one of them via a special cast feature(see Cast Gesture System
-    below for more info). Here are some brief introductions:
+    <br>At this stage, I think I am pretty determined to make only <del>3</del> 2 professions in this game. Every profession has unique weapons 
+    and unique abilities. <del>And, I am very passionate about adding flexibilities to every one of them via a special cast feature(see Cast Gesture System
+    below for more info).</del> Here are some brief introductions:
     </p>
-    <p>
+    <del>
         First, there will be a gunslinger. The gunslinger will have a knife for melee attack, and 3 ranged 
         weapons for medium/long distance attacks. Since the game has a background similar to the Age of 
         Discovery, she will have a rifle that does not have insane attack speed, a shotgun, and a grenade launcher.
         The gunslinger will feature mobility and high ranged damage.
-    </p>
-    <p>Second, there will be a warrior. The warrior will have a sword (probably a katana) as the melee weapon. She will have
+    </del>
+    <p>Second, there will be a <del>warrior</del> archer. The <del>warrior</del> archer will have a sword (probably a katana) as the melee weapon. She will have
        a bow with various arrows as the second weapon. This profession will feature
-       melee attack damage and short/medium distance combo damage. </p>
+       melee attack damage and short/medium distance <del>combo</del> damage. </p>
 
     <p>The third is a mage. The mage does not have a melee weapon, but has powerful magic spells. The mage 
-        The mage features high mobility and high combo damage if abilities are well used.
+        The mage features high mobility <del>and high combo damage</del> if abilities are well used.
     </p>
 
     <p>Three separated classes are created for those three professions. They all 
@@ -280,10 +305,11 @@
         more debugging coming soon.
     </p>
 
-    <p><strong style="font-size: large;"><i>Cast Gesture System (in progress)</i></strong>
-    <br>This is most important part of this game because of it adds so much more flexibilities to the gameplay. But to be honest,
-    implementing this system is giving me a big headache. 
+    <p><strong style="font-size: large;" class="unfinished"><i>Cast Gesture System (cut)</i></strong>
+    <br><del>This is most important part of this game because of it adds so much more flexibilities to the gameplay. But to be honest,
+    implementing this system is giving me a big headache. </del>
     </p>
+    <del>
     <p>Cast Gesture System is a mechanism that allows a player to cast different abilities by making different gestures using mouse. 
        I came up with the idea of this controlling system when I first time attemped to make a game using GameMaker Studio a few years ago, which 
        apparently I did not succeeed. 
@@ -300,8 +326,61 @@
     </p>
 
     <p>More to be updated</p>
+    </del>
     <small class="foot">Date of update: May 28, 2020
         <br>In week 3, the average time spent on development is 3.5 hrs/day.
+        <br><strong>Modified on June 5, 2020</strong>
     </small>
+
+    <div class="journalDiv">
+        <p class="weeklyTitle">
+            <strong style="font-size: large;">Week 4 Updates</strong>
+            <br><small>May 30th - June 5th</small>
+        </p>
+        <p>I have spent a lot of time on development this week, but unfortunately,
+            and pretty obviously, spending too much time on one over-expected system 
+            is not a very effective plan. Although I have made great progresses on the algorithms after
+            I gave a dozen of hours to developing Cast Gesture System, I realized two
+            challenges in applying this system to the game. First, this way of controlling
+            and casting in a 2D sidescroller game, actually probably any type of game, is 
+            very odd and difficult to get used to. Second, the flexibility, if it ever works,
+            also brings plenty of art works. I think at this stage, after I have been stuck on this mechanism for
+            weeks, I should re-consider my priority to finish the game, which is to start working
+            on the visuals and UIs.
+        </p>
+        <p>Also, I figured that it is the same to having too many professions. I decided to 
+            cut gunslinger from this project; I'll focus on at least completing one profession, that is archer;
+            and, I will add features to the Mage once everything else is done.
+        </p>
+
+        <p><strong style="font-size:large;"><i>Animation:</i></strong>
+        <br>I found this nicely designed sprite package that fit my game: <a href="https://oco.itch.io/medieval-fantasy-character-pack-4">Medieval Fantasy Character Pack</a> ---<a href="https://oco.itch.io/">by OcO</a>.
+        But for this package, the images were combined together into one file. So I did a lot of PhotoShopings, and eventually
+        I separated every frame out. Specifically to this package, I created functions that could crop empty background surrounding the actually sprite.
+        In addition, I made a function that could load an animation and a function that could scale up the animation sequence, which I believed will be re-used in future.
+        </p>
+
+        <p>In terms of data structures for static images and animated images, single object references will be used for single images and 
+           a list of image objects will be used for an animation sequence.
+        </p>
+        
+        <p>To properly display animation in the correct orders, tick variables are added to main and Player class.
+           For example, when jumping, a "jumping tick" variable will be recording how long the jumping event has happened.
+           According to the value of the tick that reflects the state of jumping, pre-jumping images and in-air jumping images will be blitted respectively.
+           This technics is also used for falling, landing, running, etc.
+        </p>
+
+        <p><strong style="font-size:large;"><i>Legacies from Cast Gesture System:</i></strong>
+        <br>If you press q, and use mouse to click a location in the window, the character will be teleported to that location. This feature
+        has a high likelihood to come back with implementations in future for character dodges.
+        </p>
+        <p>The Gesture Detection was one of the algorithms that I successfully made. It tracks gestures made by a 
+            user, then tells the directions of the gestures via performing linear regression. This algorithm still
+            has a hope to come back for the gameplay of the Mage.
+        </p>
+        <small class="foot">Date of update: June 5, 2020
+            <br>In week 4, the average time spent on development is 4 hrs/day.
+        </small>
+    </div>
 </div>
 </html>

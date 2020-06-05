@@ -8,7 +8,7 @@
 			var completedh=document.getElementById("completed").offsetHeight;
 			var plannedh=document.getElementById("planned").offsetHeight;
 			var ongoingh=document.getElementById("ongoing").offsetHeight;
-			var abandondedh=document.getElementById("abandonded").offsetHeight;
+			var abandondedh=document.getElementById("abandoned").offsetHeight;
 			if(completedh<plannedh){
 				document.getElementById("completed").style.height=plannedh.toString()+"px";
 				document.getElementById("planned").style.height=plannedh.toString()+"px";
@@ -19,10 +19,10 @@
 			}
 			if(ongoingh<abandondedh){
 				document.getElementById("ongoing").style.height=abandondedh.toString()+"px";
-				document.getElementById("abandonded").style.height=abandondedh.toString()+"px";
+				document.getElementById("abandoned").style.height=abandondedh.toString()+"px";
 			}
 			else{
-				document.getElementById("abandonded").style.height=ongoingh.toString()+"px";
+				document.getElementById("abandoned").style.height=ongoingh.toString()+"px";
 				document.getElementById("ongoing").style.height=ongoingh.toString()+"px";
 			}
 		}
@@ -88,8 +88,8 @@
 				<li> <a href="https://code-eqs.github.io">This website, of course. </a> </li>
 			</ul>
 		</div>
-		<div style="float: right;width: 50%;" id="abandonded">
-			<p style="text-align: center;">Abandonded projects
+		<div style="float: right;width: 50%;" id="abandoned">
+			<p style="text-align: center;">Abandoned projects
 				<br> (maybe will pick up in future)</p>
 			<ul>
 				<li>Minecraft mod development</li>
