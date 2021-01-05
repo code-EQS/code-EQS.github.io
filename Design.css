@@ -24,6 +24,8 @@ footer{
 	background-color: rgb(97, 193, 228);
 	width: 100%;
 	height: auto;
+	position: absolute;
+	bottom: 0px;
 }
 /* video{
 position: fixed; right: 0; bottom: 0;
