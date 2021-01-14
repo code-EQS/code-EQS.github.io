@@ -176,3 +176,15 @@ div.tile:hover{
 	transition: .3s ease;
 }
 
+.postdiv{
+    min-height: 100px;
+    width: auto;
+    background: #bcecff;
+    padding: 0;
+    border: 1px solid;
+    border-radius: 20px;
+	margin: 0 auto;
+	position: relative;
+
+	
+}
